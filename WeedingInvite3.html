@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Weds Mansi | Wedding Invitation</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+
+    /* Full Background from your reference card */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfcAAAK/CAIAAAD79BPsAAEAAElEQVR4nOz9WbN...lihUkmmqtSSLJKgKDYgCAIiARIAQRIECKJvLm6H7jbnnL33WnOOTD9kfjnG2vec");
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.92);
+        z-index: -1;
+    }
+
+    /* ===========================
+        ROYAL DOOR
+    ============================ */
+    .door-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 0, 0, 0.65);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 20;
+    }
+
+    .door-left, .door-right {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background: #5b130a;
+        background-image: linear-gradient(#7c1d14, #3b0b09);
+        transition: transform 2.3s ease-in-out;
+        box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+    }
+
+    .door-left { left: 0; }
+    .door-right { right: 0; }
+
+    .door-text {
+        font-size: 34px;
+        color: gold;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 0px 0px 14px rgba(255,215,0,0.8);
+        animation: fadeIn 2s ease;
+    }
+
+    /* Door animation */
+    .open .door-left { transform: translateX(-100%); }
+    .open .door-right { transform: translateX(100%); }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* ===========================
+        Main Content
+    ============================ */
+    .content {
+        text-align: center;
+        opacity: 0;
+        padding-top: 30px;
+        animation: contentAppear 2.2s ease forwards;
+        animation-delay: 2.6s;
+    }
+
+    @keyframes contentAppear {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title-names {
+        margin-top: 20px;
+        font-size: 42px;
+        font-weight: 800;
+        color: #5b130a;
+        text-shadow: 0px 0px 5px rgba(255,255,255,0.8);
+    }
+
+    .details {
+        margin-top: 14px;
+        font-size: 20px;
+        color: #333;
+        font-weight: 600;
+        text-shadow: 0px 0px 3px rgba(255,255,255,0.7);
+    }
+
+    .venue-box {
+        margin: 20px auto;
+        width: 80%;
+        padding: 14px;
+        background: rgba(255,255,255,0.82);
+        border-radius: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        border: 2px solid rgba(100, 50, 20, 0.2);
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: #8b0000;
+        color: white;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #b00000;
+        transform: scale(1.08);
+    }
+</style>
+</head>
+
+<body>
+
+<!-- DOOR ANIMATION -->
+<div class="door-container" id="doors">
+    <div class="door-left"></div>
+    <div class="door-right"></div>
+    <div class="door-text">Sharma Family Welcomes You</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+    <div class="title-names">Yash ❤️ Mansi</div>
+
+    <div class="details">
+        With joyful hearts, we invite you to our wedding ceremony.
+    </div>
+
+    <div class="details">
+        <strong>Date:</strong> 05 February 2026 <br>
+        <strong>Time:</strong> 6:00 PM – 9:00 PM
+    </div>
+
+    <div class="venue-box">
+        <strong>Venue:</strong><br>
+        Padamnabh Palace, Canal Road,<br>
+        Chitresh Nagar, Borkhera, Kota, Rajasthan
+    </div>
+
+    <a class="btn" href="https://maps.app.goo.gl/SoFEWC6W26D3hDeB8" target="_blank">Open in Google Maps</a>
+</div>
+
+<!-- Scripts -->
+<script>
+    /* Open the door */
+    setTimeout(() => {
+        document.getElementById("doors").classList.add("open");
+    }, 1500);
+
+    /* Hide door after animation */
+    setTimeout(() => {
+        document.getElementById("doors").style.display = "none";
+    }, 3500);
+</script>
+
+</body>
+</html>
